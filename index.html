@@ -126,6 +126,33 @@ const form=document.getElementById("rsvp"), fields=document.getElementById("part
 function selected(){return form.querySelector('input[name="participation"]:checked').value}
 function sync(){const yes=selected()==="Yes";fields.hidden=!yes;count.required=yes}
 form.querySelectorAll('input[name="participation"]').forEach(x=>x.addEventListener("change",sync));sync();
+// Keep an unfinished RSVP draft through refreshes in this browser tab.
+// Session storage is device-local; it is not a submitted RSVP.
+const draftKey="nicolaro-christmas-rsvp-draft-v1";
+const draftFields=["family","contact","email","phone","count","notes","comments"];
+function saveDraft(){
+  try{
+    const draft={};
+    draftFields.forEach(id=>draft[id]=document.getElementById(id).value);
+    draft.participation=selected();
+    sessionStorage.setItem(draftKey,JSON.stringify(draft));
+  }catch(error){/* Private browsing may block browser storage. */}
+}
+try{
+  const saved=JSON.parse(sessionStorage.getItem(draftKey)||"null");
+  if(saved && typeof saved==="object"){
+    draftFields.forEach(id=>{
+      if(typeof saved[id]==="string") document.getElementById(id).value=saved[id];
+    });
+    if(saved.participation==="Yes" || saved.participation==="No"){
+      const radio=form.querySelector('input[name="participation"][value="'+saved.participation+'"]');
+      if(radio) radio.checked=true;
+    }
+    sync();
+  }
+}catch(error){/* Use the original form defaults if a draft cannot be read. */}
+form.addEventListener("input",saveDraft);
+form.addEventListener("change",saveDraft);
 const closes=new Date("2026-12-03T00:00:00-05:00");
 if(Date.now()>=closes.getTime()){form.querySelectorAll("input,textarea,button").forEach(el=>el.disabled=true);note.textContent="The December 2 RSVP deadline has passed. Registration is now closed."}
 form.addEventListener("submit",function(ev){
