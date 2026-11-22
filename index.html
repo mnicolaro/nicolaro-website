@@ -1,21 +1,149 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nicolaro.com | Christmas</title>
-  <meta name="description" content="The Nicolaro family Christmas website">
-  <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body { background: white; font-family: system-ui, sans-serif; }
-    header { width: 100%; background: #142a4c; }
-    header img { display: block; width: 100%; height: auto; }
-    main { min-height: 60vh; background: #fff; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173b4c">
+<title>The 310 Doyle Gang Family Christmas | Nicolaro.com</title>
+<meta name="description" content="Join the 310 Doyle Gang's 2026 Christmas Western family movie. RSVP by December 2.">
+<style>
+:root{--ink:#302019;--red:#973521;--red2:#b8472b;--cream:#fff8e7;--gold:#e5b66b;--green:#264d43}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#f3ead8;font-family:ui-rounded,"Trebuchet MS",Arial,sans-serif;line-height:1.55}
+.site-header{background:#122945}.site-header img{display:block;width:100%;height:auto;max-height:550px;object-fit:cover}
+main{max-width:1100px;margin:auto;padding:0 18px 65px}.intro{text-align:center;padding:34px 15px 25px}
+.eyebrow{letter-spacing:.15em;font-size:.82rem;text-transform:uppercase;font-weight:bold;color:#7e412f}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.17}h1{font-size:clamp(2.1rem,5.8vw,4rem);margin:10px auto;max-width:830px}h2{font-size:clamp(1.55rem,3vw,2.3rem);margin:0 0 14px}
+.lead{font-size:clamp(1.05rem,2.1vw,1.27rem);max-width:770px;margin:15px auto}
+.ribbon{display:inline-block;background:var(--red);color:#fff7e7;border:3px solid #e3bf83;border-radius:50px;padding:11px 23px;font-weight:bold;box-shadow:0 5px 0 #632518}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:9px;text-decoration:none;cursor:pointer;border:0;border-radius:12px;padding:14px 22px;font-weight:800;font-size:1.05rem;background:var(--red);color:white;box-shadow:0 4px 0 #66271a}
+.button:hover,.button:focus-visible{background:#7a2b1c}.button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #357da3;outline-offset:3px}
+.card{border:3px solid #bd8e53;border-radius:22px;background:linear-gradient(135deg,#fff8e9,#f4dfb9);box-shadow:0 10px 20px #4b301a18;margin:24px 0;padding:clamp(20px,4vw,42px)}
+.flex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.scene-art{text-align:center;background:linear-gradient(180deg,#d4e7ec,#e6caa5);border-radius:18px;border:3px solid #c49c64;padding:20px;font-size:clamp(4rem,9vw,7rem);min-height:220px;display:grid;place-content:center}
+.scene-art span{display:block;font-size:.9rem;text-transform:uppercase;letter-spacing:.11em;color:#54382c;font-weight:bold}
+.characters{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-top:22px}
+.character{background:#fff9e9;border:2px solid #d9ba8e;border-radius:17px;padding:18px;text-align:center}
+.character .face{font-size:2.5rem;display:block;margin-bottom:4px}.character strong{display:block;color:#713d2e}.character p{font-size:.93rem;margin:7px 0 0}
+details{background:#fff9e9;border:2px solid #d6af73;border-radius:16px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:15px 18px;font-weight:bold;color:#562e21}
+summary::-webkit-details-marker{display:none}.play{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#ad3924;color:white;font-size:1.4rem;flex-shrink:0;box-shadow:0 4px 0 #62271a}.script{padding:20px clamp(15px,4vw,35px);border-top:2px solid #e3d3b5;background:#fffdf5}
+.script .direction{font-style:italic;color:#655143}.script .speaker{font-weight:bold;letter-spacing:.06em;color:#713520;margin-top:20px;margin-bottom:3px}.script p{margin:9px 0}.script h3{margin-top:0}
+form{display:grid;gap:16px}.grid-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:5px}label,legend{font-weight:800}.field input,.field textarea{width:100%;background:#fffdf6;border:2px solid #c8a97d;border-radius:10px;padding:13px;font:inherit;color:var(--ink)}
+.field textarea{min-height:105px;resize:vertical}fieldset{border:2px solid #c9a577;border-radius:12px;padding:14px 16px}fieldset label{display:inline-flex;align-items:center;gap:7px;margin:6px 22px 6px 0;cursor:pointer}
+input[type=radio]{accent-color:var(--red);width:19px;height:19px}.notice{background:#f7e8c8;border-left:5px solid #9d673b;border-radius:7px;padding:13px 16px;font-size:.93rem}
+footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}footer a{color:inherit}
+[hidden]{display:none!important}
+@media(max-width:700px){.flex,.grid-fields{grid-template-columns:1fr}.card{padding:20px 16px}.site-header img{max-height:none}.scene-art{min-height:150px}.button{width:100%}.characters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.characters{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header><img src="christmas-header.webp" alt="Nicolaro.com Christmas claymation banner with snowman and snowy cottage"></header>
-  <main aria-label="Future Nicolaro family Christmas content"></main>
-</body>
-</html>
+<header class="site-header"><img src="christmas-header.webp" alt="Nicolaro.com claymation Christmas scene with a snowman, Christmas tree and cottage"></header>
+<main>
+<section class="intro">
+<div class="eyebrow">The 310 Doyle Gang presents</div>
+<h1>Family Christmas 2026<br>🎄 The Christmas Roundup 🤠</h1>
+<p class="lead">Wanted: cowboys, cowgirls, outlaws—and a few good actors! This year, instead of separate family assignments, we're making one big, funny Christmas Western together.</p>
+<p class="lead">Every household can film a short scene at home. No acting experience required: just your family, a little imagination, and a willingness to have fun.</p>
+<div class="ribbon">Reply by Wednesday, December 2, 2026</div>
+<p><a class="button" href="#signup">✉️ Join the Posse — Yes or No</a></p>
+</section>
+
+<section class="card" aria-labelledby="story">
+<div class="flex">
+<div><div class="eyebrow">The big idea</div><h2 id="story">One trail. One family movie. Plenty of chaos.</h2>
+<p>Our loose screenplay follows a traveling posse whose trip to the North Pole Saloon is anything but smooth. Families will each play their assigned scene, with everyday living rooms becoming stagecoaches, saloons, and watering holes.</p>
+<p>We'll assign characters and scenes <strong>after</strong> the December 2 signup deadline, based on how many people from each household want to join.</p></div>
+<div class="scene-art" aria-label="Western Christmas decorations">🤠 🐎<br>🎄 🛷<span>A holiday Western adventure</span></div>
+</div>
+<h2 style="margin-top:30px">Meet the Posse</h2>
+<div class="characters">
+<div class="character"><span class="face">⭐🤠</span><strong>The Sheriff</strong><p>Deadpan, stressed, and obsessed with keeping the trail on schedule.</p></div>
+<div class="character"><span class="face">🎩🎤</span><strong>Kid Cuzzola</strong><p>Turns every little cowboy moment into an emotional speech.</p></div>
+<div class="character"><span class="face">☕🍪</span><strong>Calamity Cookie</strong><p>Practical, chaotic, and always armed with snacks or espresso.</p></div>
+<div class="character"><span class="face">👔🤠</span><strong>Buckaroo Barnaby</strong><p>Usually distracted—and dressed completely wrong for the occasion.</p></div>
+<div class="character"><span class="face">🌵🐾</span><strong>The Outlaw “Tumbleweed”</strong><p>Mostly silent physical comedy. Kids and pets welcome!</p></div>
+</div>
+</section>
+
+<section class="card" id="sneak-peek" aria-labelledby="peek">
+<div class="eyebrow">Sneak peek · Written screenplay sample</div>
+<h2 id="peek">The Broken Stagecoach &amp; The Watering Hole</h2>
+<p>A couch, a few chairs, cowboy hats, a wooden spoon, and one spectacular imaginary swimming pool. Curious what this year's video might look like?</p>
+<details>
+<summary><span class="play" aria-hidden="true">▶</span><span>Read the Sample Scene <small style="display:block;font-weight:normal">Tap to open the written script — no video</small></span></summary>
+<div class="script">
+<h3>Scene 4 of 10: “The Broken Stagecoach &amp; The Watering Hole”</h3>
+<p><strong>Setting:</strong> A living room or couch lined up like a row of bus/stagecoach seats.</p>
+<p><strong>Props:</strong> Cowboy hats, sunglasses, a broomstick or wooden spoon (for the driver), and a towel or bathrobe at the end.</p>
+<p class="direction">[SCENE START] All 5 characters sit in a tight row of chairs, bouncing up and down together like they’re riding a bumpy stagecoach. SHERIFF holds a paper map upside down.</p>
+<p class="speaker">SHERIFF</p><p class="direction">(Squinting at the map)</p><p>Alright, listen up, Nicolaros and Cuzzolas! Next stop: the North Pole Saloon. If this stagecoach stays on schedule, we’ll make it before Santa saddles up!</p>
+<p class="direction">Suddenly, THE OUTLAW makes a loud sputtering sound—PFFFT-CLUNK-HISSSS—and everyone lurches forward in their chairs.</p>
+<p class="speaker">CALAMITY COOKIE</p><p class="direction">(Looking out an imaginary window)</p><p>Well, butter my biscuits. The stagecoach threw a horseshoe. Again. Just like that wagon back in the Old Country!</p>
+<p class="speaker">BUCKAROO BARNABY</p><p class="direction">(Checking an invisible watch)</p><p>Great. First we get stranded at the Dodge City Airport Depot, and now we’re stuck in the middle of nowhere in our Sunday best!</p>
+<p class="speaker">KID CUZZOLA</p><p class="direction">(Stands up slowly, dramatically removes cowboy hat, and holds a wooden spoon like a microphone)</p><p>Hold on now, partners. Let me say a few words. When I look at this dusty, stranded posse… I don’t see a broken wagon. I see love. I see family. I see—</p>
+<p class="speaker">SHERIFF</p><p class="direction">(Interrupting, deadpan)</p><p>Kid, save the Best Man speech for Christmas dinner. It’s 90 degrees out here and Barnaby’s melting in that tuxedo vest.</p>
+<p class="speaker">BUCKAROO BARNABY</p><p class="direction">(Eyes lighting up, pointing off-camera)</p><p>Wait a second… is that a watering hole?!</p>
+<p class="speaker">CALAMITY COOKIE</p><p>Last one in is a rotten reindeer!</p>
+<p class="direction">On the count of three, everyone yells “YEEHAW!” and dives onto the couch/floor in slow motion as if jumping into a swimming pool. BUCKAROO BARNABY dramatically whips off their jacket/vest mid-dive, revealing oversized boxer shorts or pajama pants underneath.</p>
+<p class="speaker">SHERIFF</p><p class="direction">(Popping up from behind the couch, wearing swimming goggles over their cowboy hat)</p><p>Still beats waiting for a replacement bus! Merry Christmas, ya filthy outlaws!</p>
+</div>
+</details>
+</section>
+
+<section class="card" id="signup" aria-labelledby="sign-title">
+<div class="eyebrow">Official posse roll call</div><h2 id="sign-title">Will Your Family Join the Christmas Roundup?</h2>
+<p>We need one response per household—even if your answer is no. You'll receive scene assignments only after the deadline.</p>
+<div class="ribbon">RSVP Deadline: December 2, 2026 · 11:59 PM Eastern</div>
+<p class="notice"><strong>How signup works right now:</strong> This form prepares an email with your answers. Your email app will open, and <strong>you must press Send</strong> to deliver it to Mike. Automatic text alerts and online registration storage are not enabled yet.</p>
+<form id="rsvp">
+<div class="grid-fields">
+<div class="field"><label for="family">Family / household name *</label><input id="family" name="family" required maxlength="100" placeholder="The Smith Family"></div>
+<div class="field"><label for="contact">Primary contact *</label><input id="contact" name="contact" required maxlength="100" autocomplete="name"></div>
+<div class="field"><label for="email">Your email *</label><input id="email" name="email" required type="email" autocomplete="email"></div>
+<div class="field"><label for="phone">Your phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+</div>
+<fieldset><legend>Will your household participate? *</legend><label><input type="radio" name="participation" value="Yes" required checked> Yes — count us in!</label><label><input type="radio" name="participation" value="No"> No — sitting this one out.</label></fieldset>
+<div class="grid-fields" id="participants">
+<div class="field"><label for="count">How many people will participate? *</label><input id="count" name="count" type="number" min="1" max="100" step="1" value="2" required></div>
+<div class="field"><label for="notes">Children, pets, or special considerations (optional)</label><input id="notes" name="notes" maxlength="250" placeholder="2 adults, 2 kids, 1 dog"></div>
+</div>
+<div class="field"><label for="comments">Comments, questions, or ideas</label><textarea id="comments" name="comments" maxlength="2500" placeholder="Tell us anything helpful for planning your family's scene..."></textarea></div>
+<button class="button" type="submit" id="submit">✉️ Prepare Our RSVP Email</button>
+<p id="form-status" role="status" aria-live="polite"></p>
+</form>
+</section>
+</main>
+<footer>🎄 The 310 Doyle Gang Family Christmas · 2026 🎄<br><small>Made for the family with love, laughter, and a little cowboy chaos.</small></footer>
+<script>
+(function(){
+const form=document.getElementById("rsvp"), fields=document.getElementById("participants"), count=document.getElementById("count"), note=document.getElementById("form-status"), submit=document.getElementById("submit");
+function selected(){return form.querySelector('input[name="participation"]:checked').value}
+function sync(){const yes=selected()==="Yes";fields.hidden=!yes;count.required=yes}
+form.querySelectorAll('input[name="participation"]').forEach(x=>x.addEventListener("change",sync));sync();
+const closes=new Date("2026-12-03T00:00:00-05:00");
+if(Date.now()>=closes.getTime()){form.querySelectorAll("input,textarea,button").forEach(el=>el.disabled=true);note.textContent="The December 2 RSVP deadline has passed. Registration is now closed."}
+form.addEventListener("submit",function(ev){
+ev.preventDefault();
+if(!form.reportValidity())return;
+if(Date.now()>=closes.getTime()){note.textContent="Registration has closed.";return}
+const val=id=>document.getElementById(id).value.trim();
+const yes=selected()==="Yes";
+const subject="310 Doyle Gang Christmas RSVP — "+val("family")+" — "+(yes?"YES":"NO");
+const body=["THE 310 DOYLE GANG FAMILY CHRISTMAS 2026","",
+"Household: "+val("family"),
+"Contact: "+val("contact"),
+"Email: "+val("email"),
+"Phone: "+(val("phone")||"Not supplied"),
+"Participating: "+selected(),
+"Number of participants: "+(yes?val("count"):"Not applicable"),
+"Children/pets/notes: "+(yes?(val("notes")||"None"):"Not applicable"),
+"Comments: "+(val("comments")||"None"),
+"",
+"Please send this email to complete your RSVP."].join("\n");
+const href="mailto:mike@nicolaro.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+note.textContent="Your email app should open with the RSVP details. Please press Send to complete your response. If nothing opens, email mike@nicolaro.com directly.";
+window.location.href=href;
+});
+})();
+</script>
+</body></html>
