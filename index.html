@@ -100,8 +100,8 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 <div class="eyebrow">Official posse roll call</div><h2 id="sign-title">Will Your Family Join the Christmas Roundup?</h2>
 <p>We need one response per household—even if your answer is no. You'll receive scene assignments only after the deadline.</p>
 <div class="ribbon">RSVP Deadline: December 2, 2026 · 11:59 PM Eastern</div>
-<p class="notice"><strong>How signup works right now:</strong> This form prepares an email with your answers. Your email app will open, and <strong>you must press Send</strong> to deliver it to Mike. Automatic text alerts and online registration storage are not enabled yet.</p>
-<form id="rsvp">
+<p class="notice"><strong>How signup works:</strong> Submit one RSVP per household. Your registration is sent to our Google Sheet, and an email notification is sent to Mike. A new tab will show the registration service response; look for “RSVP received successfully.” No paid text alerts are used.</p>
+<form id="rsvp" method="post" action="https://script.google.com/macros/s/AKfycbx4KhMeanpM5ycrFAsWa2eGNjVFX5SBm0k17e-iuSHe2Sd5azSZ2G5VWx7l5K_TUjBc/exec" target="_blank">
 <div class="grid-fields">
 <div class="field"><label for="family">Family / household name *</label><input id="family" name="family" required maxlength="100" placeholder="The Smith Family"></div>
 <div class="field"><label for="contact">Primary contact *</label><input id="contact" name="contact" required maxlength="100" autocomplete="name"></div>
@@ -114,7 +114,7 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 <div class="field"><label for="notes">Babies, pets, or special consideration (optional)</label><input id="notes" name="notes" maxlength="250" placeholder="2 adults, 2 kids, 1 dog"></div>
 </div>
 <div class="field"><label for="comments">Comments, questions, or ideas</label><textarea id="comments" name="comments" maxlength="2500" placeholder="Tell us anything helpful for planning your family's scene..."></textarea></div>
-<button class="button" type="submit" id="submit">✉️ Prepare Our RSVP Email</button>
+<button class="button" type="submit" id="submit">📨 Submit Our RSVP</button>
 <p id="form-status" role="status" aria-live="polite"></p>
 </form>
 </section>
@@ -129,26 +129,9 @@ form.querySelectorAll('input[name="participation"]').forEach(x=>x.addEventListen
 const closes=new Date("2026-12-03T00:00:00-05:00");
 if(Date.now()>=closes.getTime()){form.querySelectorAll("input,textarea,button").forEach(el=>el.disabled=true);note.textContent="The December 2 RSVP deadline has passed. Registration is now closed."}
 form.addEventListener("submit",function(ev){
-ev.preventDefault();
-if(!form.reportValidity())return;
-if(Date.now()>=closes.getTime()){note.textContent="Registration has closed.";return}
-const val=id=>document.getElementById(id).value.trim();
-const yes=selected()==="Yes";
-const subject="310 Doyle Gang Christmas RSVP — "+val("family")+" — "+(yes?"YES":"NO");
-const body=["THE 310 DOYLE GANG FAMILY CHRISTMAS 2026","",
-"Household: "+val("family"),
-"Contact: "+val("contact"),
-"Email: "+val("email"),
-"Phone: "+(val("phone")||"Not supplied"),
-"Participating: "+selected(),
-"Number of participants: "+(yes?val("count"):"Not applicable"),
-"Children/pets/notes: "+(yes?(val("notes")||"None"):"Not applicable"),
-"Comments: "+(val("comments")||"None"),
-"",
-"Please send this email to complete your RSVP."].join("\n");
-const href="mailto:mike@nicolaro.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-note.textContent="Your email app should open with the RSVP details. Please press Send to complete your response. If nothing opens, email mike@nicolaro.com directly.";
-window.location.href=href;
+if(Date.now()>=closes.getTime()){ev.preventDefault();note.textContent="Registration has closed.";return}
+if(!form.reportValidity()){ev.preventDefault();return}
+note.textContent="Your RSVP has been sent to the registration service in a new tab. Please check that tab for “RSVP received successfully.” If you see an error, contact mike@nicolaro.com. Do not submit again unless the first attempt failed.";
 });
 })();
 </script>
