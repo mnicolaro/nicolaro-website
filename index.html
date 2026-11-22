@@ -34,11 +34,15 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 [hidden]{display:none!important}
 @media(max-width:700px){.flex,.grid-fields{grid-template-columns:1fr}.card{padding:20px 16px}.site-header img{max-height:none}.scene-art{min-height:150px}.button{width:100%}.characters{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:390px){.characters{grid-template-columns:1fr}}
-</style>
+.poster{position:relative;max-width:1170px;margin:24px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px #39241f45;border:3px solid #c79a63;background:#f6ead3}.poster>img{display:block;width:100%;height:auto}.poster-play{position:absolute;left:90%;top:88%;width:9%;height:20%;transform:translate(-50%,-50%);background:transparent;border:0;cursor:pointer;border-radius:50%}.poster-play:focus-visible{outline:4px solid #fff;outline-offset:-4px}.art-ready .intro,.art-ready #story-card{display:none}.art-ready #sneak-peek{margin-top:18px}.art-ready #sneak-peek>.eyebrow,.art-ready #sneak-peek>h2,.art-ready #sneak-peek>p{display:none}.art-ready .illustrated-sample>summary img{display:none}.art-ready .illustrated-sample>summary{padding:10px 16px}.art-ready #signup{background:linear-gradient(130deg,#fff4d9,#f4d2a2);border:5px ridge #b47c42;box-shadow:0 11px 23px #3d241b26}.art-ready #signup h2{text-align:center;color:#9c2e24;font-size:clamp(1.9rem,4vw,2.8rem)}.art-ready #signup .eyebrow{text-align:center}.art-ready #signup .button{border:2px solid #f6dfab;border-radius:15px}.art-ready #signup input,.art-ready #signup textarea{background:#fffaf0}@media(max-width:700px){.poster{margin:12px -8px 0;border-radius:12px}.poster-play{left:92%;top:89%;width:13%;height:27%}.art-ready #sneak-peek>.eyebrow,.art-ready #sneak-peek>h2{display:block}.art-ready #signup{padding:22px 17px}}</style>
 </head>
 <body>
 <header class="site-header"><img src="christmas-header.webp" alt="Nicolaro.com claymation Christmas scene with a snowman, Christmas tree and cottage"></header>
 <main>
+<section class="poster" id="illustrated-poster" aria-label="The 310 Doyle Gang claymation Christmas Western invitation">
+<img src="doyle-claymation-poster.webp" alt="The 310 Doyle Gang Family Christmas claymation Western scene: snowy town, five cowboy characters, Christmas decorations, invitation and sample-scene preview" onload="document.body.classList.add('art-ready')" onerror="this.closest('.poster').hidden=true">
+<button type="button" class="poster-play" aria-label="Read the Broken Stagecoach screenplay" onclick="document.getElementById('script-details').open=true;document.getElementById('script-details').scrollIntoView({behavior:'smooth',block:'start'})"></button>
+</section>
 <section class="intro">
 <div class="eyebrow">The 310 Doyle Gang presents</div>
 <h1>Family Christmas 2026<br>🎄 The Christmas Roundup 🤠</h1>
@@ -48,7 +52,7 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 <p><a class="button" href="#signup">✉️ Join the Posse — Yes or No</a></p>
 </section>
 
-<section class="card" aria-labelledby="story">
+<section class="card" id="story-card" aria-labelledby="story">
 <div class="flex">
 <div><div class="eyebrow">The big idea</div><h2 id="story">One trail. One family movie. Plenty of chaos.</h2>
 <p>Our loose screenplay follows a traveling posse whose trip to the North Pole Saloon is anything but smooth. Families will each play their assigned scene, with everyday living rooms becoming stagecoaches, saloons, and watering holes.</p>
@@ -69,7 +73,7 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 <div class="eyebrow">Sneak peek · Written screenplay sample</div>
 <h2 id="peek">The Broken Stagecoach &amp; The Watering Hole</h2>
 <p>A couch, a few chairs, cowboy hats, a wooden spoon, and one spectacular imaginary swimming pool. Tap the claymation scene below to read the sample screenplay.</p>
-<details class="illustrated-sample">
+<details id="script-details" class="illustrated-sample">
 <summary aria-label="Open the written screenplay: The Broken Stagecoach and The Watering Hole">
 <img src="310-doyle-gang-scene-preview.webp" alt="Claymation Western Christmas village with the 310 Doyle Gang characters, wooden welcome sign, stagecoach sneak peek and red play icon" onerror="this.style.display='none'">
 <span class="sample-label"><span class="play" aria-hidden="true">▶</span><span>Read the Sample Scene <small style="display:block;font-weight:normal">Click to open the written screenplay — no video</small></span></span></summary>
