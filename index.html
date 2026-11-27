@@ -26,6 +26,7 @@ h1,h2,h3{font-family:Georgia,serif;line-height:1.17}h1{font-size:clamp(2.1rem,5.
 summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:15px 18px;font-weight:bold;color:#562e21}
 summary::-webkit-details-marker{display:none}.play{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#ad3924;color:white;font-size:1.4rem;flex-shrink:0;box-shadow:0 4px 0 #62271a}.script{padding:20px clamp(15px,4vw,35px);border-top:2px solid #e3d3b5;background:#fffdf5}
 .script .direction{font-style:italic;color:#655143}.script .speaker{font-weight:bold;letter-spacing:.06em;color:#713520;margin-top:20px;margin-bottom:3px}.script p{margin:9px 0}.script h3{margin-top:0}
+.rsvp-trap{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
 form{display:grid;gap:16px}.grid-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{display:grid;gap:5px}label,legend{font-weight:800}.field input,.field textarea{width:100%;background:#fffdf6;border:2px solid #c8a97d;border-radius:10px;padding:13px;font:inherit;color:var(--ink)}
 .field textarea{min-height:105px;resize:vertical}fieldset{border:2px solid #c9a577;border-radius:12px;padding:14px 16px}fieldset label{display:inline-flex;align-items:center;gap:7px;margin:6px 22px 6px 0;cursor:pointer}
@@ -101,6 +102,11 @@ footer{text-align:center;padding:30px 20px;background:#173c42;color:#fff2d7}foot
 <p>We need one response per household—even if your answer is no. You'll receive scene assignments only after the deadline.</p>
 <div class="ribbon">RSVP Deadline: December 2, 2026 · 11:59 PM Eastern</div>
 <form id="rsvp" method="post" action="https://script.google.com/macros/s/AKfycbx4KhMeanpM5ycrFAsWa2eGNjVFX5SBm0k17e-iuSHe2Sd5azSZ2G5VWx7l5K_TUjBc/exec" target="_blank">
+<!-- Bot trap: real guests should never see or fill out this field. -->
+<div class="rsvp-trap" aria-hidden="true">
+<label for="company_website">Company website (leave blank)</label>
+<input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+</div>
 <div class="grid-fields">
 <div class="field"><label for="family">Family / household name *</label><input id="family" name="family" required maxlength="100" placeholder="The Smith Family"></div>
 <div class="field"><label for="contact">Primary contact *</label><input id="contact" name="contact" required maxlength="100" autocomplete="name"></div>
